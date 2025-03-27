@@ -18,4 +18,14 @@ class AppTest {
         };
         assertArrayEquals(expectedOutput, mt.generateTable(5));
     }
+
+    @Test
+    public void testGenerateTableNegative(){
+        MultiplicationTable mt = new MultiplicationTable();
+            try {
+                mt.generateTable(-2);
+            } catch (IllegalArgumentException e){
+                assertEquals("El valor de n no puede ser negativo", e.getMessage());
+            }
+    }
 }
